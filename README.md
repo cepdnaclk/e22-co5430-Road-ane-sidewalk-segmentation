@@ -10,6 +10,18 @@ This project implements an end-to-end semantic segmentation pipeline focusing on
 
 ---
 
+## Qualitative Results
+
+### Dataset Samples: Input (RGB) vs. Ground Truth Mask
+<!-- Replace the path below with the actual path to your dataset sample image -->
+![Dataset Samples](code/images/image1.png)
+
+### Model Predictions — Input | Ground Truth | Prediction | Overlay
+<!-- Replace the path below with the actual path to your prediction overlay image -->
+![Model Predictions](code/images/image.png)
+
+---
+
 ## Methodology & Pipeline
 *   **Data Processing:** Utilizes 20,000 driving frames with RGB and color-coded masks. Masks are decoded to class IDs via a GPU lookup table using a 13-class schema.
 *   **Augmentation:** Images are resized to 256x512. Augmentation is handled via Albumentations and includes flip, brightness/contrast adjustments, shift-scale-rotate, and Gaussian noise.
@@ -40,6 +52,31 @@ A full 10-epoch run was completed utilizing early stopping with a patience of 2.
 *   **Best Epoch:** 9 / 10
 *   **Best Validation mIoU:** 0.649
 *   **Validation Loss at Best Checkpoint:** 0.744
+
+---
+
+## How to Run
+
+The training pipeline is provided as a Jupyter Notebook (`image-proccesing (1).ipynb`). It is optimized to run top-to-bottom on a GPU-enabled Kaggle kernel.
+
+### Prerequisites
+Ensure you have a GPU environment (a Tesla T4 or better is recommended) and the following dependencies installed:
+*   `torch` (with `torch.amp` support for mixed precision)
+*   `torchvision`
+*   `albumentations` (for advanced image augmentations)
+*   `opencv-python`
+*   `numpy`, `pandas`, `matplotlib`, `tqdm`
+
+### Dataset Setup
+The notebook expects the CARLA 20K semantic segmentation dataset to be located in the Kaggle input directory structure. 
+1. Place the dataset files in your environment.
+2. Ensure the `color_dict.csv` file and the `semantic_segmentation_dataset/` folders (`train/images` and `val/images`) are mapped correctly. 
+3. If running locally or on Colab, update the `BASE_DIR` variable in the notebook to point to your dataset's root folder.
+
+### Execution
+1. Open the notebook in your Jupyter/Kaggle/Colab environment.
+2. Ensure the hardware accelerator is set to **GPU**.
+3. Run the notebook cells top-to-bottom to initialize the dataset, apply the Albumentations pipeline, build the O(1) GPU mask decoding lookup table, and commence the training loop.
 
 ---
 
