@@ -2,6 +2,10 @@
 ### Pixel-Level Scene Understanding for Autonomous Driving Context Awareness
 
 **Team:** Group 06 (E/22/303, E/22/125)
+## Team Members
+
+* **R.B.R.M.D. RAJAPAKSHA ** (E/22/303) - [e22303@eng.pdn.ac.lk](mailto:e22303@eng.pdn.ac.lk)
+* **D.D.S.K.GUNAWARDHANA** (E/22/125) - [e22125@eng.pdn.ac.lk](mailto:e22125@eng.pdn.ac.lk)
 
 ---
 
