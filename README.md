@@ -93,10 +93,3 @@ The notebook expects the CARLA 20K semantic segmentation dataset to be located i
 *   **mIoU Plateau:** Validation mIoU gains slowed markedly after epoch 6 (going from 0.62 to 0.65), meaning the current backbone and resolution combination is near its ceiling.
 
 ---
-
-## Planned Improvements & Next Steps
-*   **Push Baseline:** Raise resolution toward 512x1024 and attempt training with a ResNet-101 backbone.
-*   **Weeks 4-6 (Add Architectures):** Implement U-Net and SegFormer (CNN encoder-decoder and transformer baselines) under identical settings.
-*   **Weeks 4-6 (Unify Datasets):** Bring CamVid, Cityscapes, and BDD100K subsets onto a shared 4-class schema for cross-model comparison.
-*   **Weeks 6-7 (Full Evaluation):** Analyze per-class IoU, Dice (especially for lane markings), pixel accuracy, and conduct a failure-mode analysis across weather, lighting, and occlusion.
-*   **Weeks 7-8 (Final Deliverables):** Consolidate visualizations, build cross-model comparison tables, and complete the final report and demo.
